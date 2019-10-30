@@ -1,77 +1,121 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+<!-- Header --> 
+@extends('MasterPage.header2')
+<!-- End Header -->
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+<div class="container col-md-6 m-t-50">
+    <div class="shadow-lg bdr-20 p-3 bg-white">
+        <a href="/">
+            <img class="d-block mx-auto m-t-10" width="60" height="60" src="{{ asset('images/XSplash.png') }}"/>
+        </a>
+        <p class="josefin text-center m-t-20">Already have an account? <a href="/login"><u class="f-blk">Login</u></a></p>
+        <p class="sans text-center f-b fs-30">Join Splash</p>
+        <div>
+            <form action="{{ route('register') }}" method="POST">
+                @csrf
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                <div class="form-group col-md-11 justify">
+                    <label class="f-b">Name</label>
+                    <input id="name" type="text" class="input form-control" name="name" value="{{ old('name') }}" required autofocus>
+                </div>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                <div class="form-group col-md-11 justify">
+                    <label class="f-b m-t-20">Username</label>&nbsp;&nbsp;<span class="f-blk">(only letters, numbers, and underscores)</span>
+                    <input type="text" class="input form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" name="username">
+                    @if ($errors->has('username'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>Username has been taken!</strong>
+                        </span>
+                    @endif
+                </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                <div class="form-group col-md-11 justify">
+                    <label class="f-b m-t-20">E-Mail address</label>
+                    <input id="email" type="email" class="input form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                    @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>E-mail has been taken!</strong>
+                        </span>
+                    @endif
+                </div>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                <div class="form-group col-md-11 justify">
+                    <label class="f-b m-t-10">Password</label>&nbsp;&nbsp;<span class="f-blk">(min. 6 char)</span>
+                    <input id="password" type="password" class="input form-control @error('password') is-invalid @enderror" name="password" required>
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>Confirm passwords do not match!</strong>
+                        </span>
+                    @enderror
+                </div>
+    
+                <div class="form-group col-md-11 justify">
+                    <label class="f-b m-t-20">Confirm Password</label>
+                    <input id="password-confirm" type="password" class="input form-control" name="password_confirmation" required>
+                </div>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                <div class="form-group col-md-11 justify">
+                    <button class="btn btn-dark btn-block m-t-20" type="submit" value="Register">Join</button>
+                    <hr>
+                </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                <div class="form-group col-md-11 justify">
+                    <p class="text-center m-t-20">By joining, you agree to the
+                        <a data-toggle="modal" data-target="#terms" href="#"><u class="f-blk">Terms</u></a>
+                        and
+                        <a data-toggle="modal" data-target="#privacypolicy" href="#"><u class="f-blk">Privacy Policy</u></a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+      
+    <!-- Modal -->
+    <!-- Term & Conditions -->
+    <div class="modal fade" id="terms" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bdr-10">
+                <div class="modal-header">
+                    <h5 class="modal-title f-b" id="exampleModalCenterTitle">Terms & Conditions</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Terms
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Agree</button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Privacy Policy -->
+    <div class="modal fade" id="privacypolicy" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bdr-10">
+                <div class="modal-header">
+                    <h5 class="modal-title f-b" id="exampleModalCenterTitle">Privacy Policy</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Privacy Policy
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Agree</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+
 </div>
+@endsection
+@section('script')
+   <script type="text/javascript">
+   </script>
 @endsection

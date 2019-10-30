@@ -20,9 +20,14 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
     <!-- JS -->
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -46,7 +51,6 @@
     </div>
     <!-- End Content -->
 </body>
-
 <!-- Script -->
 <script>
     // Script Pre Loader
@@ -59,6 +63,7 @@
         var $btn = $(this).button('loading')
         $btn.button('loading')
     })
+
 </script>
 @yield('script')
 <!-- End Script -->

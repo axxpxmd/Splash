@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <div class="">
+    <div class="col-md-10 justify">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand pacifico m-r-60" href="/">
                 <img src="{{ asset('images/XSplash.png') }}" class="d-inline-block align-top" width="30" height="30" alt="">
@@ -54,6 +54,7 @@
             </div>
         </nav>
     </div>
+    <hr class="m-t-4">
 </body>
 
 </html>
