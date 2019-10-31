@@ -20,7 +20,7 @@
 <body>
     <div class="col-md-10 justify">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand pacifico m-r-60" href="/">
+            <a class="navbar-brand pacifico m-r-60 m-t-4" href="/">
                 <img src="{{ asset('images/XSplash.png') }}" class="d-inline-block align-top" width="30" height="30" alt="">
                 Splash
             </a>
@@ -34,20 +34,20 @@
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
+                        <li class="nav-item m-t-4">
                             <a class="nav-link navbar-brand m-r-15 josefin" href="#">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item m-t-4">
                             <a class="nav-link navbar-brand m-r-20 josefin" href="#">Explore</a>
                         </li>
-                        <a class="m-r-20" href="#">
-                            <button type="button" class="btn btn-outline-dark josefin">Submit a Photo</button>
+                        <a class="m-r-20 m-t-4" href="#">
+                            <button type="button" class="btn btn-outline-dark josefin bdr-20">Submit a Photo</button>
                         </a>
-                        <a class="navbar-brand navFont josefin" href="/login">
+                        <a class="navbar-brand navFont josefin m-t-4" href="/login">
                             <span style="border-left: 1px black solid" class="m-r-20"></span>Login
                         </a>
                         <a href="/register">
-                            <button type="button" class="btn btn-success buttonSubmit josefin">Join free</button>
+                            <button type="button" class="btn btn-success m-t-4 josefin bdr-20">Join free</button>
                         </a>
                     </ul>
                 </form>

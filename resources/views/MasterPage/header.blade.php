@@ -18,9 +18,10 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+<div class="shadow">
+    <div class="col-md-10 justify ">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand navBrand " href="/home">
+            <a class="navbar-brand pacifico" href="/home">
                 <img src="{{ asset('images/XSplash.png') }}" width="30" height="30" alt="">
                 Splash
             </a>
@@ -30,35 +31,35 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <form action="" class="p-1 bg-light rounded rounded-pill shadow-sm col-md-8">
+                <!-- Search Bar -->
+                {{-- <form action="" class="p-1 bg-light rounded rounded-pill shadow-sm col-md-7">
                     <div class="input-group">
                         <div class="input-group-append">
                             <button id="button-addon1" type="submit" class="btn btn-link text-primary"><img src="{{ asset('images/search.png') }}" width="20" height="20" alt=""></button>
                         </div>
                         <input placeholder="Search" aria-describedby="button-addon1" class="form-control col-md-11 border-0 bg-light"></input>
                     </div>
-                </form>
+                </form> --}}
+                <!-- End Search Bar -->
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
+                <div class="form-inline my-2 my-lg-0">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link m-r-15" href="#">
-                                <img width="25" height="25" src="{{ asset('images/home.png') }}" alt="">
-                            </a>
+                        <li class="nav-item m-t-4">
+                            <a class="nav-link navbar-brand m-r-15 josefin" href="#">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link m-r-20" href="#">
-                                <img width="25" height="25" src="{{ asset('images/explore.png') }}" alt="">
-                            </a>
+                        <li class="nav-item m-t-4">
+                            <a class="nav-link navbar-brand m-r-20 josefin" href="#">Explore</a>
                         </li>
-                        <a class="m-r-20" href=""><button type="button" class="btn btn-outline-dark">Submit a Photo</button></a>
-                        <h6 class="navbar-brand"><span style="border-left: 1px black solid" class="m-r-20"></span>Hello... Asip </h6>
+                        <a class="m-r-20" href=""><button type="button" class="btn btn-outline-dark m-t-4 bdr-20 josefin">Submit a Photo</button></a>
+                        <h6 class="navbar-brand m-t-4 josefin"><span style="border-left: 1px black solid" class="m-r-20"></span>Hello... {{ Auth::user()->name }} </h6>
                     </ul>
-                </form>
+                </div>
             </div>
         </nav>
     </div>
+    {{-- <hr class="m-t-0"> --}}
+</div>
 </body>
 
 </html>

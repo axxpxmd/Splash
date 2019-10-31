@@ -18,7 +18,7 @@
         
                     <div class="form-group col-md-11 justify">
                         <label class="f-b">E-Mail address</label>
-                        <input type="email" class="input form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" disabled required autocomplete="email" autofocus>
+                        <input type="email" class="input form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

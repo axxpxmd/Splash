@@ -53,3 +53,10 @@
 .bdr-15 { border-radius: 15px;}
 .bdr-20 { border-radius: 20px; }
 
+/* Margin */
+.m-l-17 {
+    margin-left: 10%;
+}
+.m-r-17 {
+    margin-right: 17%;
+}
