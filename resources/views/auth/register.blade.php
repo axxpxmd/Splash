@@ -73,44 +73,7 @@
     </div>
       
     <!-- Modal -->
-    <!-- Term & Conditions -->
-    <div class="modal fade" id="terms" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content bdr-10">
-                <div class="modal-header">
-                    <h5 class="modal-title f-b" id="exampleModalCenterTitle">Terms & Conditions</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Terms
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Agree</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Privacy Policy -->
-    <div class="modal fade" id="privacypolicy" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content bdr-10">
-                <div class="modal-header">
-                    <h5 class="modal-title f-b" id="exampleModalCenterTitle">Privacy Policy</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Privacy Policy
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Agree</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    @extends('Page.terms')
     <!-- End Modal -->
 
 </div>

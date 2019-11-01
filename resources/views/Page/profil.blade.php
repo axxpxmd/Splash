@@ -6,18 +6,21 @@
 
     <!-- Profil info -->
     <div class="col-md-10 justify-content-center m-t-70 row">
-        {{-- @foreach ($photo as $i) --}}
-            {{-- <img class="profil rounded-circle" width="150" height="150" src="{{ asset('ava/'. $i->photo) }}" alt="..."> --}}
-            <img class="rounded-circle justify-content-center" width="150" height="150" src="{{ asset('images/boy.png') }}" alt="...">
-        {{-- @endforeach --}}
+        @foreach ($photo as $i)
+            @if ($i->photo == !'')
+                <img class="rounded-circle justify-content-center" width="150" height="150" src="{{ asset('ava/'. $i->photo) }}" alt="...">
+            @else
+                <img class="rounded-circle justify-content-center" width="150" height="150" src="{{ asset('images/user1.png') }}" alt="...">    
+            @endif
+        @endforeach
         <div class="m-l-30">
             <p class="d-inline-block m-r-20 josefin f-b fs-40">{{ Auth::user()->name }}</p>
-            <a href=""><button type="button" class="m-b-20 btn btn-outline-dark">Edit Profil</button></a>
+            <a href="{{ route('account.edit') }}"><button type="button" class="m-b-20 btn btn-outline-dark">Edit Profil</button></a>
             <button type="button" class="m-b-20 btn btn-outline-dark" data-toggle="dropdown" >
                 ...
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="">Account settings</a>
+                <a class="dropdown-item" href="{{ route('account.edit') }}">Account settings</a>
                 <a class="dropdown-item" href="">Submit a Photo</a>
                 <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                 Log Out
@@ -26,7 +29,7 @@
                     @csrf
                 </form>
             </div>
-            <p style="line-height: -100%;">{{ Auth::user()->bio }}</p>
+            <p>{{ Auth::user()->bio }}</p>
             <img width="20" height="20" src="{{ asset('images/twitter.png') }}" alt=""> &nbsp;<a class="text-black" href="https://twitter.com/{{ Auth::user()->twitter }}" target="blank"><u>{{ Auth::user()->twitter }}</u></a> &nbsp; &nbsp; &nbsp; &nbsp;
             <img width="20" height="20" src="{{ asset('images/instagram.png') }}" alt=""> &nbsp;<a class="text-black" href="https://www.instagram.com/{{ Auth::user()->instagram }}/" target="blank"><u>{{ Auth::user()->instagram }}</u></a>
         </div>

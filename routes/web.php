@@ -31,7 +31,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 /* Protect Auth */
 Route::group(['middleware' => ['auth']], function () {
+    
     // Profil
     Route::get('profil','ProfilController@index')->name('profil');
+
+    // Edit Account
+    Route::get('account', 'ProfilController@edit_account')->name('account.edit');
+    Route::put('account/update-info/{id}', 'ProfilController@update_info')->name('account.updateInfo');
+    Route::put('account/update-ava/{id}', 'ProfilController@update_ava')->name('account.updateAva');
+    Route::put('account/delete-ava/{id}', 'ProfilController@delete_ava')->name('account.deleteAva');
 
 });
