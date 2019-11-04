@@ -33,11 +33,15 @@
                         <li class="nav-item m-t-4">
                             <a class="nav-link navbar-brand m-r-20 josefin" href="#">Explore</a>
                         </li>
-                        <a class="m-r-20 m-t-4" href=""><button type="button" class="btn btn-outline-dark bdr-20">Submit a Photo</button></a>
-                        <h6 class="navbar-brand m-t-4"><span style="border-left: 1px black solid" class="m-r-20"></span>Hello... {{ Auth::user()->name }} </h6>
+                        <a class="m-r-20 m-t-4 josefin" href=""><button type="button" class="btn btn-outline-dark bdr-20">Submit a Photo</button></a>
+                        <h6 class="navbar-brand m-t-4 josefin"><span style="border-left: 1px black solid" class="m-r-20"></span>Hello... {{ Auth::user()->name }} </h6>
                         <div class="dropdown">
                             <a class="dropdown-toggle navbar-brand m-t-4" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img width="25px" height="25px" src="{{ asset('images/Profil.png') }}" alt="..." class="rounded-circle">
+                                @if (Auth::user()->photo  == !'')
+                                    <img width="30px" height="30px" src="{{ asset('ava/' . Auth::user()->photo) }}" alt="..." class="rounded-circle"> 
+                                @else
+                                    <img width="30px" height="30px" src="{{ asset('images/profil.png') }}" alt="..." class="rounded-circle"> 
+                                @endif 
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="{{ route('profil') }}">Profil</a>

@@ -13,6 +13,30 @@
                 </button>
             </div>
         @endif
+        @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Whoops!</strong> &nbsp;The photo failed to upload.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        {{-- @if (session()->has('errors'))
+        <div class="alert alert-danger alert-dismissible fade show bdr-20" role="alert">
+            <strong>Whoops!</strong> &nbsp;The photo failed to upload.<br><br>
+            <ul>
+                <li>Profile image must be less than 1MB.</li>
+            </ul>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif --}}
         <div class="row">
             <div class="col-md-4">
                 <p class="f-b fs-20">Account Setting</p>
