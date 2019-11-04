@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <!-- Header -->
-    @extends('MasterPage.header')
+    @include('MasterPage.header')
     <!-- End Header -->
 
     <!-- Profil info -->

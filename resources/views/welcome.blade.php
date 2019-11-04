@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
     <!-- Header -->
-    @extends('MasterPage.header2')
+    @include('MasterPage.header2')
     <!-- End Header -->
+
+    <div class="text-center">Welcome Page</div>
 @endsection

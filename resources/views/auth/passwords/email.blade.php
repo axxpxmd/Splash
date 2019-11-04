@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <!-- Header -->
-    @extends('MasterPage.header2')
+    @include('MasterPage.header2')
     <!-- End Header -->
     <div class="container col-md-6 m-t-50">
         @if (session('status'))

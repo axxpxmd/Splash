@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <!-- Header -->
-    @extends('MasterPage.header')
+    @include('MasterPage.header')
     <!-- End Header -->
 
     <div class="container m-t-60">
@@ -94,6 +94,8 @@
             </div>
         </div>
         <hr>
+
+        <!-- Footer -->
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -111,9 +113,10 @@
                 </div>
             </div>
         </div>
+        <!-- End Footer -->
 
         <!-- Modal -->
-        @extends('Page.terms')
+        @include('Page.terms')
         <!-- End Modal -->
 
         <!-- Modal Update Ava -->
