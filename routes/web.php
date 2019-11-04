@@ -41,4 +41,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('account/update-ava/{id}', 'ProfilController@update_ava')->name('account.updateAva');
     Route::put('account/delete-ava/{id}', 'ProfilController@delete_ava')->name('account.deleteAva');
 
+    // Change Password
+    Route::get('password', 'PasswordController@index')->name('password.index');
+    Route::put('password', 'PasswordController@update')->name('password.update');
+
 });

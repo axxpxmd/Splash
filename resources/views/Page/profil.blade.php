@@ -29,6 +29,9 @@
                     @csrf
                 </form>
             </div>
+            <br>
+            <p class="d-inline-block">location</p>
+            <p class="d-inline-block">web</p>
             <p>{{ Auth::user()->bio }}</p>
             <img width="20" height="20" src="{{ asset('images/twitter.png') }}" alt=""> &nbsp;<a class="text-black" href="https://twitter.com/{{ Auth::user()->twitter }}" target="blank"><u>{{ Auth::user()->twitter }}</u></a> &nbsp; &nbsp; &nbsp; &nbsp;
             <img width="20" height="20" src="{{ asset('images/instagram.png') }}" alt=""> &nbsp;<a class="text-black" href="https://www.instagram.com/{{ Auth::user()->instagram }}/" target="blank"><u>{{ Auth::user()->instagram }}</u></a>

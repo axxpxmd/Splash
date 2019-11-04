@@ -18,7 +18,7 @@
                 <p class="f-b fs-20">Account Setting</p>
                 <a class="text-black" href="{{ route('profil') }}"><p class="m-t-30"><u>Profil</u></p></a>
                 <p>Edit Profile</p>
-                <a class="text-black" href=""><p><u>Change Password</u></p></a>
+                <a class="text-black" href="{{ route('password.index') }}"><p><u>Change Password</u></p></a>
                 <a class="text-black" href=""><p><u>Delete Account</u></p></a>
             </div>
             <div class="col-md-8">
