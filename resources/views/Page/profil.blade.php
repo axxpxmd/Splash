@@ -30,11 +30,29 @@
                 </form>
             </div>
             <br>
-            <p class="d-inline-block">location</p>
-            <p class="d-inline-block">web</p>
+            @if (Auth::user()->location == !'')
+                <img src="{{ asset('images/location.png') }}" width="15" alt="">&nbsp;
+                    <p class="f-blk d-inline-block">{{ Auth::user()->location }}</p>&nbsp; &nbsp; &nbsp; &nbsp;
+            @endif
+            @if (Auth::user()->site == !'')
+            <img src="{{ asset('images/site.png') }}" width="15" alt="">&nbsp;
+                <a href="{{ Auth::user()->site }}" target="blank">
+                    <u class="f-blk">{{ Auth::user()->site }}</u>
+                </a>
+            @endif
             <p>{{ Auth::user()->bio }}</p>
-            <img width="20" height="20" src="{{ asset('images/twitter.png') }}" alt=""> &nbsp;<a class="text-black" href="https://twitter.com/{{ Auth::user()->twitter }}" target="blank"><u>{{ Auth::user()->twitter }}</u></a> &nbsp; &nbsp; &nbsp; &nbsp;
-            <img width="20" height="20" src="{{ asset('images/instagram.png') }}" alt=""> &nbsp;<a class="text-black" href="https://www.instagram.com/{{ Auth::user()->instagram }}/" target="blank"><u>{{ Auth::user()->instagram }}</u></a>
+            @if (Auth::user()->twitter == !'')
+            <img width="20" src="{{ asset('images/twitter.png') }}" alt=""> &nbsp;
+                <a class="text-black" href="https://twitter.com/{{ Auth::user()->twitter }}" target="blank">
+                    <u>{{ Auth::user()->twitter }}</u>
+                </a> &nbsp; &nbsp; &nbsp; &nbsp;
+            @endif
+            @if (Auth::user()->instagram == !'')
+            <img width="20" src="{{ asset('images/instagram.png') }}" alt=""> &nbsp;
+                <a class="text-black" href="https://www.instagram.com/{{ Auth::user()->instagram }}/" target="blank">
+                    <u>{{ Auth::user()->instagram }}</u>
+                </a>
+            @endif
         </div>
     </div>
     <!-- End Profil info -->

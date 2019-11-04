@@ -55,35 +55,52 @@
                             <label class="f-b">Username</label>&nbsp;&nbsp;<span class="f-blk">(only letters, numbers, and underscores)</span>
                             <input type="text" class="input form-control @error('username') is-invalid @enderror" name="username" id="username" value="{{ Auth::user()->username }}" required >
                             @if ($errors->has('username'))
-                            <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <strong>Username has been taken!</strong>
                                 </span>
                             @endif
                         </div>
 
-                        <div class="form-group col-md-12">
-                            <label class="f-b">Twitter</label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input bg-white input-group-text">@</div>
+                        <div class="form-row col-md-12 m-l-1 m-t-10">
+                            <div class="form-row col-md-6">
+                                <label class="f-b">Twitter</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input bg-white input-group-text">@</div>
+                                    </div>
+                                    <input type="text" class="input form-control" name="twitter" value="{{ Auth::user()->twitter }}"  placeholder="example: asphmdx">
                                 </div>
-                                <input type="text" class="input form-control" name="twitter" value="{{ Auth::user()->twitter }}"  placeholder="example: asphmdx">
+                            </div>
+                            <div class="form-row col-md-6 m-l-auto">
+                                <label class="f-b">Instagram</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input bg-white input-group-text">@</div>
+                                    </div>
+                                    <input type="text" class="input form-control" name="instagram" value="{{ Auth::user()->instagram }}"  placeholder="example: asphmdx">
+                                </div>
                             </div>
                         </div>
 
-                        <div class="form-group col-md-12">
-                            <label class="f-b">Instagram</label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input bg-white input-group-text">@</div>
-                                </div>
-                                <input type="text" class="input form-control" name="instagram"   value="{{ Auth::user()->instagram }}" placeholder="example: asphmdx">
+                        <div class="form-row col-md-12 m-l-1 m-t-15">
+                            <div class="form-row col-md-6">
+                                <label class="f-b">Location</label>
+                                <input type="text" class="input form-control" name="location" value="{{ Auth::user()->location }}">
+                            </div>
+                            <div class="form-row col-md-6 m-l-auto">
+                                <label class="f-b">Personal Site/Portfolio</label>
+                                <input type="text" class="input form-control" name="site" value="{{ Auth::user()->site }}">
                             </div>
                         </div>
 
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 m-t-15">
                             <label class="f-b">Bio</label>
-                            <textarea type="text" style="height: 130px" class="input form-control" name="bio" id="bio">{{ Auth::user()->bio }}</textarea>
+                            <textarea type="text" style="height: 130px" class="input form-control @error('bio') is-invalid @enderror" name="bio" id="bio">{{ Auth::user()->bio }}</textarea>
+                            @if ($errors->has('bio'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>Bio is too long ( maximum is 250 characters )</strong>
+                                </span>
+                            @endif
                         </div>
 
                         <div class="form-group col-md-12">
