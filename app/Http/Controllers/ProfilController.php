@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Validator;
 use Auth;
 
 // Models
@@ -31,7 +30,7 @@ class ProfilController extends Controller
         $request->validate([
             'email'    => 'required | unique:mysql.users,email,' . Auth::user()->id,
             'username' => 'required | unique:mysql.users,username,' . Auth::user()->id,
-            'bio' => 'required | max:250',
+            'bio'      => 'required | max:250',
         ]);
 
         $profile = users::find(Auth::user()->id);
@@ -59,6 +58,7 @@ class ProfilController extends Controller
 
         $profil = users::find(Auth::id());
 
+        // Proses Saved
         $file     = $request->file('photo');
         $fileName = time().".".$file->getClientOriginalName();
         $request->file('photo')->move("ava/", $fileName);
