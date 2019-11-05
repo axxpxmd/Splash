@@ -45,4 +45,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('password', 'PasswordController@index')->name('password.index');
     Route::put('password', 'PasswordController@update')->name('password.update');
 
+    Route::get('publish', 'PostController@index')->name('post.index');
+    Route::put('publish', 'PostController@store')->name('post.store');
 });

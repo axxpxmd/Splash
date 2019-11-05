@@ -1,58 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ asset('images/XSplash.png') }}" type="image/x-icon">
-    <title>Splash</title>
+@extends('layouts.app')
+@section('content')
+    @include('MasterPage.header')
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/util.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-</head>
-<body>
-<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content bdr-10">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Posted a photo</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="container">
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show text-center bdr-20 m-t-50" role="alert">
+                {{ session('success') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+        @endif
+        <div id="alert"></div>
+        <h2 class="josefin f-b text-center">Post</h2>
+        <p class="text-center">Make Something Awesome</p>
+        <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            {{ method_field('PUT') }}
             <div class="modal-body">
-                <img class="d-block mx-auto m-t-10" width="60" height="60" src="{{ asset('images/XSplash.png') }}"/>
-                <p class="josefin text-center m-t-30 fs-20">Make Something Awesome</p>
-                <form action="{{ route('account.updateAva', Auth::user()->id) }}" method="POST" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                    {{ method_field('PUT') }}
-                    <input type="hidden" name="id" value="{{ Auth::user()->id }}" id="id" >
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <input type="file" name="photo" id="file" class="input-file" onchange="tampilkanPreview(this,'preview')">
-                            <label for="file" class="btn btn-tertiary js-labelFile">
-                                <i class="icon fa fa-check"></i>
-                                <span class="js-fileName">Browse a image</span>
-                            </label>
-                            <br>
-                            <img width="400" height="400" class="rounded img-fluid" id="preview" style="display: block; margin: auto;" alt=""/>
-                        </div>
-                    </div>
-    
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-dark">Publis to Splash</button>
-                    </div>
-                </form>
+                <div class="form-group">
+                    <input type="file" name="photo" id="file" class="input-file" onchange="tampilkanPreview(this,'preview')">
+                    <label for="file" class="btn btn-tertiary js-labelFile">
+                        <i class="icon fa fa-check"></i>
+                        <span class="js-fileName">Change Photo Profil</span>
+                    </label>
+                    <br>
+                    <img width="300" height="300" class="rounded img-fluid" id="preview" style="display: block; margin: auto;" alt=""/>
+                </div>
             </div>
-        </div>
+            <button type="submit" id="btn-add" class="btn btn-outline-dark justify">Publis to Splash</button>
+        </form>
     </div>
-</div>
-</body>
+@endsection
+@section('script')
 <script type="text/javascript">
+
     // file name preview
     (function() {
         'use strict';
@@ -100,5 +82,4 @@
         }
     }
 </script>
-
-</html>
+@endsection

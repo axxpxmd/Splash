@@ -30,6 +30,6 @@ class PostController extends Controller
 
         return redirect()
             ->route('post.index')
-            ->withSuccess('Posted!');
+            ->withSuccess('Thanks for submitting');
     }
 }

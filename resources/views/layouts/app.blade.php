@@ -25,8 +25,8 @@
     <!-- JS -->
     <script src="{{ asset('js/app.js') }}"></script>
 
-     <!-- Sweet Alert -->
-     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -67,6 +67,9 @@
         $btn.button('loading')
     })
 
+</script>
+<script type="text/javascript">
+    $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 </script>
 @yield('script')
 <!-- End Script -->
