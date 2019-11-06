@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
 use Auth;
 
 // Models
@@ -10,26 +11,36 @@ use App\Models\post;
 
 class PostController extends Controller
 {
-    public function index()
-    {
-        return view('Page.post');
-    }
-
+    // Store
     public function store(Request $request)
     {
-        $upload            = new post();
-        $upload->caption   = $request->get('caption');
-        $upload['user_id'] = Auth::user()->id;
+        $validation = Validator::make($request->all(), [
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
 
-        $file     = $request->file('photo');
-        $fileName = time().".".$file->getClientOriginalName();
-        $request->file('photo')->move("post/", $fileName);
+        if($validation->passes()) {
 
-        $upload->photo = $fileName;
-        $upload->save();
+            $upload = new post();
+            $upload->caption = $request->get('caption');
+            $upload['user_id'] = Auth::user()->id;
 
-        return redirect()
-            ->route('post.index')
-            ->withSuccess('Thanks for submitting');
+            $file     = $request->file('photo');
+            $fileName = time().".".$file->getClientOriginalName();
+            $request->file('photo')->move("post/", $fileName);
+
+            $upload->photo = $fileName;
+            $upload->save();
+
+            return response()->json([
+                'class_name'  => 'alert-success',
+                'message'     => 'Image Upload Successfully',
+            ]);
+        } else {
+            return response()->json([
+                'message'     => $validation->errors()->all(),
+                'class_name'  => 'alert-danger',
+            ]);
+        }
+       
     }
 }

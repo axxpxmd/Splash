@@ -10,24 +10,24 @@
             <br>
             
             <div class="m-auto">
-                @foreach ($photo as $i)
-                    @if ($i->photo == !'')
-                        <img class="rounded-circle m-b-10" width="100" height="100" src="{{ asset('ava/'. $i->photo) }}" alt="...">
-                    @else  
-                    @endif
-                @endforeach
+            @foreach ($photo as $i)
+                @if ($i->photo == !'')
+                    <img class="rounded-circle m-b-10" width="100" height="100" src="{{ asset('ava/'. $i->photo) }}" alt="...">
+                @else  
+                @endif
+            @endforeach
             </div>
-                @foreach ($photo as $i)
-                    @if ($i->photo == !'')
-                        <form class="m-auto" action="{{ route('account.deleteAva', Auth::user()->id) }}" method="POST">
-                            <input type="hidden" name="id" value="{{ Auth::user()->id }}" id="id" >
-                            {{ csrf_field() }}
-                            {{ method_field('PUT') }}
-                            <button type="submit" class="btn btn-outline-danger">Delete Photo Profil</button>
-                        </form>
-                    @else
-                    @endif
-                @endforeach
+            @foreach ($photo as $i)
+                @if ($i->photo == !'')
+                    <form class="m-auto" action="{{ route('account.deleteAva', Auth::user()->id) }}" method="POST">
+                        <input type="hidden" name="id" value="{{ Auth::user()->id }}" id="id" >
+                        {{ csrf_field() }}
+                        {{ method_field('PUT') }}
+                        <button type="submit" class="btn btn-outline-danger">Delete Photo Profil</button>
+                    </form>
+                @else
+                @endif
+            @endforeach
             <form action="{{ route('account.updateAva', Auth::user()->id) }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}

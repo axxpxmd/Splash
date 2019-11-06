@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <!-- Header -->
-    @include('MasterPage.header')
+    @include('MasterPage.header_account')
     <!-- End Header -->
 
     <div class="container m-t-60">
@@ -157,6 +157,7 @@
 @endsection
 @section('script')
 <script type="text/javascript">
+
     // file name preview
     (function() {
         'use strict';

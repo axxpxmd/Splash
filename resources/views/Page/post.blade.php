@@ -1,39 +1,56 @@
-@extends('layouts.app')
-@section('content')
-    @include('MasterPage.header')
-
-    <div class="container">
-        @if (session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show text-center bdr-20 m-t-50" role="alert">
-                {{ session('success') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<div class="modal fade bd-example-modal-xl" id="publish" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content bdr-10">
+            <div class="modal-header">
+                <h5 class="modal-title josefin" id="exampleModalCenterTitle">Select photos for publishing</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-        @endif
-        <div id="alert"></div>
-        <h2 class="josefin f-b text-center">Post</h2>
-        <p class="text-center">Make Something Awesome</p>
-        <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
-            {{ csrf_field() }}
-            {{ method_field('PUT') }}
-            <div class="modal-body">
-                <div class="form-group">
-                    <input type="file" name="photo" id="file" class="input-file" onchange="tampilkanPreview(this,'preview')">
-                    <label for="file" class="btn btn-tertiary js-labelFile">
-                        <i class="icon fa fa-check"></i>
-                        <span class="js-fileName">Change Photo Profil</span>
-                    </label>
-                    <br>
-                    <img width="300" height="300" class="rounded img-fluid" id="preview" style="display: block; margin: auto;" alt=""/>
+            <div class="alert alert-dismissible" id="message" role="alert"> </div>
+            <form method="post" id="upload_form" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="file" name="photo" id="file" class="input-file" onchange="tampilkanPreview(this,'preview')">
+                        <label for="file" class="btn btn-tertiary js-labelFile">
+                            <i class="icon fa fa-check"></i>
+                            <span class="js-fileName">Browse a image</span>
+                        </label>
+                        <br>
+                        <img width="300" he class="rounded img-fluid" id="preview" style="display: block; margin: auto;" alt=""/>
+                    </div>
                 </div>
-            </div>
-            <button type="submit" id="btn-add" class="btn btn-outline-dark justify">Publis to Splash</button>
-        </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark josefin" data-dismiss="modal">Cancel</button>
+                    <input type="submit" name="upload" id="upload" class="btn btn-dark josefin"  value="Publish to Splash">
+                </div>
+            </form>
+        </div>
     </div>
-@endsection
-@section('script')
+</div>
 <script type="text/javascript">
+
+    // Ajax Store Image
+     $(document).ready(function () {
+        $('#upload_form').on('submit', function (event) {
+            event.preventDefault();
+            $.ajax({
+                url: "{{ route('publish.store') }}",
+                method: "POST",
+                data: new FormData(this),
+                dataType: 'JSON',
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (data) {
+                    $('#message').css('display', 'block');
+                    $('#message').html(data.message);
+                    $('#message').addClass(data.class_name);
+                }
+            })
+        });
+    });
 
     // file name preview
     (function() {
@@ -82,4 +99,3 @@
         }
     }
 </script>
-@endsection

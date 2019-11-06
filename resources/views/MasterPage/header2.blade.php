@@ -24,8 +24,7 @@
                 <img src="{{ asset('images/XSplash.png') }}" class="d-inline-block align-top" width="30" height="30" alt="">
                 Splash
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -35,12 +34,12 @@
                 <form class="form-inline my-2 my-lg-0">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item m-t-4">
-                            <a class="nav-link navbar-brand m-r-15 josefin" href="#">Home</a>
+                            <a class="nav-link navbar-brand m-r-15 josefin" href="/">Home</a>
                         </li>
                         <li class="nav-item m-t-4">
-                            <a class="nav-link navbar-brand m-r-20 josefin" href="#">Explore</a>
+                            <a class="nav-link navbar-brand m-r-20 josefin" href="/login">Explore</a>
                         </li>
-                        <a class="m-r-20 m-t-4" href="#">
+                        <a class="m-r-20 m-t-4" href="/login">
                             <button type="button" class="btn btn-outline-dark josefin bdr-20">Submit a Photo</button>
                         </a>
                         <a class="navbar-brand navFont josefin m-t-4" href="/login">

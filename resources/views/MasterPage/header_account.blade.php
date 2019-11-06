@@ -20,17 +20,10 @@
                         <li class="nav-item m-t-4">
                             <a class="nav-link navbar-brand m-r-20 josefin" href="#">Explore</a>
                         </li>
-                        <a class="m-r-20">
-                            <button type="button" class="btn btn-outline-dark m-t-4 bdr-20 josefin" data-toggle="modal" data-target="#publish">Submit a Photo</button>
-                        </a>
                         <h6 class="navbar-brand m-t-4 josefin"><span style="border-left: 1px black solid" class="m-r-20"></span>Hello... {{ Auth::user()->name }} </h6>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
-
-    <!-- Modal Post -->
-    @include('Page.post')
-    <!-- End -->
 </div>

@@ -18,11 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Test Page
-Route::get('/test', function () {
-    return view('test');
-});
-
 /* Auth */
 Auth::routes();
 
@@ -45,6 +40,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('password', 'PasswordController@index')->name('password.index');
     Route::put('password', 'PasswordController@update')->name('password.update');
 
-    Route::get('publish', 'PostController@index')->name('post.index');
-    Route::put('publish', 'PostController@store')->name('post.store');
+    // Post
+    Route::post('publish', 'PostController@store')->name('publish.store');
 });

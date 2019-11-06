@@ -21,7 +21,7 @@
             </button>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="{{ route('account.edit') }}">Account settings</a>
-                <a class="dropdown-item" href="">Submit a Photo</a>
+                <a class="dropdown-item" href="" data-toggle="modal" data-target="#exampleModalCenter">Submit a Photo</a>
                 <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                 Log Out
                 </a>
@@ -59,7 +59,7 @@
 
     <!-- Post -->
     <div class="container-fluid col-md-8">
-        <ul class="nav nav-tabs m-t-90 mb-3" id="pills-tab" role="tablist">
+        <ul class="nav nav-tabs justify-content-center m-t-90 mb-3" id="pills-tab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active text-black" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
                     <img width="20" height="20" src="{{ asset('images/picture.png') }}" alt=""> 
