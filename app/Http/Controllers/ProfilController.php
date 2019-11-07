@@ -7,6 +7,7 @@ use Auth;
 
 // Models
 use App\Models\users;
+use App\Models\post;
 
 class ProfilController extends Controller
 {
@@ -14,7 +15,8 @@ class ProfilController extends Controller
     public function index()
     {
         $photo  = users::select('id', 'photo')->whereid(Auth::user()->id)->get();
-        return view('Page.profil', compact('photo'));
+        $post   = post::select('caption', 'photo', 'user_id')->where('user_id', Auth::user()->id)->get();
+        return view('Page.profil', compact('photo', 'post'));
     }
 
     // Edit Account

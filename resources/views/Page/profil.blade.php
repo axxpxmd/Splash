@@ -4,6 +4,15 @@
     @include('MasterPage.header')
     <!-- End Header -->
 
+    @if (session()->has('errors'))
+    <div class="alert alert-danger alert-dismissible fade show text-center bdr-20" role="alert">
+        {{ session('success') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+
     <!-- Profil info -->
     <div class="col-md-10 justify-content-center m-t-70 row">
         @foreach ($photo as $i)
@@ -59,7 +68,7 @@
 
     <!-- Post -->
     <div class="container-fluid col-md-8">
-        <ul class="nav nav-tabs justify-content-center m-t-90 mb-3" id="pills-tab" role="tablist">
+        <ul class="nav nav-tabs m-t-90 mb-3" id="pills-tab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active text-black" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
                     <img width="20" height="20" src="{{ asset('images/picture.png') }}" alt=""> 
@@ -81,7 +90,11 @@
         </ul>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                Page Post
+                @foreach($post as $i)
+                    <a  href="">
+                        <img width="300" height="300" class="m-b-5 hov-pointer" src="{{ asset('post/'. $i->photo) }}" alt="">
+                    </a>
+                @endforeach
             </div>
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 Page Like
@@ -91,5 +104,6 @@
             </div>
         </div>
     </div>
+
     <!-- End Post -->
 @endsection
