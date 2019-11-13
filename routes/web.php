@@ -14,15 +14,19 @@
 /* Routes */
 
 // Welcome Page
-Route::get('/', function () {
-    return view('welcome');
-});
-
-/* Auth */
-Auth::routes();
+Route::get('/', 'WelcomeController@index')->name('welcome');
 
 // Home Page
 Route::get('/home', 'HomeController@index')->name('home');
+
+// About Page
+Route::get('/about', function () {
+    return view('Page.about');
+});
+
+
+/* Auth */
+Auth::routes();
 
 /* Protect Auth */
 Route::group(['middleware' => ['auth']], function () {

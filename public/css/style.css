@@ -53,6 +53,7 @@
 .bdr-10 { border-radius: 10px;}
 .bdr-15 { border-radius: 15px;}
 .bdr-20 { border-radius: 20px; }
+.no-b { border: none; }
 
 /* Margin */
 .m-l-17 {

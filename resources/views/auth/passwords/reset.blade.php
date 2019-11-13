@@ -1,7 +1,12 @@
 @extends('layouts.app')
 @section('content')
     <!-- Header -->
-    @include('MasterPage.header2')
+    <div class="white">
+        <div class="col-md-10 justify">
+            @include('MasterPage.header2')
+            <hr class="m-t-4">
+        </div>
+    </div>
     <!-- End Header -->
 
     <div class="container col-md-6 m-t-50">
