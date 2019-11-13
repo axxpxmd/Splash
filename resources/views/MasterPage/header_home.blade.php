@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand pacifico" href="/home">
             <img src="{{ asset('images/XSplash.png') }}" width="30" height="30" alt="">
-            Splash
+            Splash 
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive"
             aria-controls="responsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="{{ route('profil') }}">Profil</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             Log Out
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

@@ -3,6 +3,7 @@
     <!-- Header -->
     @include('MasterPage.header2')
     <!-- End Header -->
+    
     <div class="container col-md-6 m-t-50">
         @if (session('status'))
          <div class="alert bdr-20 alert-success" role="alert">
@@ -10,10 +11,10 @@
         </div>
         @endif
         <div class="shadow-lg bdr-20 p-3 bg-white">
-            <a href="/">
+            {{-- <a href="/">
                 <img class="d-block mx-auto m-t-10" width="60" height="60" src="{{ asset('images/XSplash.png') }}"/>
-            </a>
-            <p class="sans text-center f-b fs-30">Reset Password</p>
+            </a> --}}
+            <p class="sans text-center f-b fs-30 m-t-20">Reset Password</p>
             <p class="josefin text-center  m-t-20">Forgot your password?</p>
             <div>
                 <form action="{{ route('password.email') }}" method="POST">
@@ -30,7 +31,7 @@
                     </div>
         
                     <div class="form-group col-md-11 justify">
-                        <button type="submit" class="btn btn-dark btn-block m-t-20">Send me reset password instructions</button>
+                        <button type="submit" class="btn btn-dark btn-block m-t-20 bdr-20">Send me reset password instructions</button>
                         <hr>
                     </div>
                 </form>

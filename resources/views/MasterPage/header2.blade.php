@@ -1,5 +1,5 @@
 <div class="col-md-10 justify">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand pacifico m-r-60 m-t-4" href="/">
             <img src="{{ asset('images/XSplash.png') }}" class="d-inline-block align-top" width="30" height="30" alt="">
             Splash
@@ -19,10 +19,18 @@
                     <li class="nav-item m-t-4">
                         <a class="nav-link navbar-brand m-r-20 josefin" href="/login">Explore</a>
                     </li>
+                    <div class="dropdown">
+                        <a class=" navbar-brand m-t-4" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="images/dots.png"  class="m-b-5" width="25px" alt="">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="/">About</a>
+                        </div>
+                    </div>
                     <a class="m-r-20 m-t-4" href="/login">
                         <button type="button" class="btn btn-outline-dark josefin bdr-20">Submit a Photo</button>
                     </a>
-                    <a class="navbar-brand navFont josefin m-t-4" href="/login">
+                    <a class="navbar-brand josefin m-t-4" href="/login">
                         <span style="border-left: 1px black solid" class="m-r-20"></span>Login
                     </a>
                     <a href="/register">

@@ -15,7 +15,7 @@ class ProfilController extends Controller
     public function index()
     {
         $photo  = users::select('id', 'photo')->whereid(Auth::user()->id)->get();
-        $post   = post::select('caption', 'photo', 'user_id')->where('user_id', Auth::user()->id)->get();
+        $post   = post::select('id', 'caption', 'photo', 'user_id')->where('user_id', Auth::user()->id)->get();
         return view('Page.profil', compact('photo', 'post'));
     }
 
@@ -55,7 +55,7 @@ class ProfilController extends Controller
     public function update_ava(Request $request)
     {
         $request->validate([
-            'photo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'photo' => 'required | image | mimes:jpeg,png,jpg|max:2048',
         ]);
 
         $profil = users::find(Auth::id());

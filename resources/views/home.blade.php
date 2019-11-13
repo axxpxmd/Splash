@@ -7,8 +7,11 @@
     <!-- Modal Post -->
     @include('Page.post')
     <!-- End Modal Post -->
-    
-    <div class="text-center">Home Page</div>
+
+    <div class="text-center">
+        Page Home
+    </div>
+
 @endsection
 @section('script')
 <script type="text/javascript">

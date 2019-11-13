@@ -4,15 +4,6 @@
     @include('MasterPage.header')
     <!-- End Header -->
 
-    @if (session()->has('errors'))
-    <div class="alert alert-danger alert-dismissible fade show text-center bdr-20" role="alert">
-        {{ session('success') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    @endif
-
     <!-- Profil info -->
     <div class="col-md-10 justify-content-center m-t-70 row">
         @foreach ($photo as $i)
@@ -30,7 +21,7 @@
             </button>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="{{ route('account.edit') }}">Account settings</a>
-                <a class="dropdown-item" href="" data-toggle="modal" data-target="#exampleModalCenter">Submit a Photo</a>
+                <a class="dropdown-item" href="" data-toggle="modal" data-target="#publish">Submit a Photo</a>
                 <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                 Log Out
                 </a>
@@ -89,10 +80,10 @@
             </li>
         </ul>
         <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="tab-pane fade col-md-10 justify show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 @foreach($post as $i)
-                    <a  href="">
-                        <img width="300" height="300" class="m-b-5 hov-pointer" src="{{ asset('post/'. $i->photo) }}" alt="">
+                    <a href="{{ route('post.detail'). '?post_id='.$i->id }}">
+                        <img width="300" height="300" value={{ $i->id }} class="m-b-5 hov-pointer m-l-18 m-t-18 " src="{{ asset('post/'. $i->photo) }}" alt="">
                     </a>
                 @endforeach
             </div>

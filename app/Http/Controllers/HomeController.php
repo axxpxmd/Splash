@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+
+// Models
+use App\Models\post;
 
 class HomeController extends Controller
 {
@@ -13,6 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        
         $this->middleware('auth');
     }
 
@@ -23,6 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $post   = post::select('caption', 'photo', 'user_id')->get();
+        return view('home',  compact('post'));
     }
 }

@@ -6,10 +6,10 @@
 
     <div class="container col-md-6 m-t-50">
         <div class="shadow-lg bdr-20 p-3 bg-white">
-            <a href="/">
+            {{-- <a href="/">
                 <img class="d-block mx-auto m-t-10" width="60" height="60" src="{{ asset('images/XSplash.png') }}"/>
-            </a>
-            <p class="sans text-center f-b fs-30">Reset Password</p>
+            </a> --}}
+            <p class="sans text-center f-b fs-30 m-t-20">Reset Password</p>
             <p class="josefin text-center  m-t-20">Change your password</p>
             <div>
                 <form method="POST" action="{{ route('password.update') }}">
@@ -42,7 +42,7 @@
                     </div>
         
                     <div class="form-group col-md-11 justify">
-                        <button type="submit" class="btn btn-block m-t-20 btn-dark">Change Password</button>
+                        <button type="submit" class="btn btn-block m-t-20 btn-dark bdr-20">Change Password</button>
                         <hr>
                     </div>
                 </form>

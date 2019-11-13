@@ -43,4 +43,10 @@ class PostController extends Controller
         }
        
     }
+
+    public function postDetail(Request $request)
+    {
+        $postDetail = post::whereid($request->post_id)->get();
+        return view('Page.post_detail', compact('postDetail'));
+    }
 }

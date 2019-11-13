@@ -42,4 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Post
     Route::post('publish', 'PostController@store')->name('publish.store');
+
+    // Post Detail
+    Route::get('post-detail', 'PostController@postDetail')->name('post.detail');
 });
