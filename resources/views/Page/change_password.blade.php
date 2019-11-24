@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
     <!-- Header -->
-    @include('MasterPage.header')
+    @include('MasterPage.header_account')
     <!-- End Header -->
 
-    <div class="container m-t-60">
+    <div class="container">
         @if (session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show text-center bdr-20" role="alert">
                 {{ session('success') }}
@@ -13,7 +13,7 @@
                 </button>
             </div>
         @endif
-        <div class="row">
+        <div class="row m-t-50">
             <div class="col-md-4">
                 <p class="f-b fs-20">Account Setting</p>
                 <a class="text-black" href="{{ route('profil') }}"><p class="m-t-30"><u>Profil</u></p></a>
@@ -63,7 +63,7 @@
             <div class="row">
                 <div class="col">
                     <a href="/">
-                        <img class="" width="30" height="30" src="{{ asset('images/XSplash.png') }}"/>
+                        <img class="" width="30" height="30" src="{{ asset('images/icon.png') }}"/>
                     </a>
                     <span class="f-blk m-l-10">Make Something Awesome</span>
                 </div>

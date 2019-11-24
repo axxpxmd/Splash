@@ -49,4 +49,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Post Detail
     Route::get('post-detail', 'PostController@postDetail')->name('post.detail');
+
+    // Suggest User
+    Route::get('suggest-user', 'SuggestController@index')->name('suggest.user');
 });

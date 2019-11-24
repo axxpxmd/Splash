@@ -7,7 +7,17 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="alert alert-dismissible" id="message" role="alert"> </div>
+
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Launch demo modal
+            </button>
+                  
+                  <!-- Modal -->
+                
+            <div class="alert alert-dismissible" id="message" data-target="#exampleModal" role="alert">
+
+            </div>
             <form method="post" id="upload_form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="modal-body">

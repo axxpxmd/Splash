@@ -7,6 +7,7 @@ use Auth;
 
 // Models
 use App\Models\post;
+use App\Models\users;
 
 class HomeController extends Controller
 {
@@ -29,6 +30,8 @@ class HomeController extends Controller
     public function index()
     {
         $post   = post::select('caption', 'photo', 'user_id')->get();
-        return view('home',  compact('post'));
+        $users  = users::whereNotIn('id', [Auth::id()])->get();
+        // $users  = users::all();
+        return view('home',  compact('post', 'users'));
     }
 }

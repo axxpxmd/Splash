@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
+
     <!-- Header -->
     @include('MasterPage.header_account')
-    <!-- End Header -->
 
-    <div class="container m-t-60">
+    <div class="container">
         @if (session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show text-center bdr-20" role="alert">
+            <div class="alert alert-success alert-dismissible fade show text-center bdr-20 m-t-30" role="alert">
                 {{ session('success') }}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -14,7 +14,7 @@
             </div>
         @endif
         @if (count($errors) > 0)
-        <div class="alert alert-danger">
+        <div class="alert alert-danger m-t-30">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -26,7 +26,7 @@
             </ul>
         </div>
         @endif
-        <div class="row">
+        <div class="row m-t-50">
             <div class="col-md-4">
                 <p class="f-b fs-20">Account Setting</p>
                 <a class="text-black" href="{{ route('profil') }}"><p class="m-t-30"><u>Profil</u></p></a>
@@ -130,7 +130,7 @@
             <div class="row">
                 <div class="col">
                     <a href="/">
-                        <img class="" width="30" height="30" src="{{ asset('images/XSplash.png') }}"/>
+                        <img class="" width="30" height="30" src="{{ asset('images/icon.png') }}"/>
                     </a>
                     <span class="f-blk m-l-10">Make Something Awesome</span>
                 </div>
@@ -143,15 +143,12 @@
                 </div>
             </div>
         </div>
-        <!-- End Footer -->
 
         <!-- Modal -->
         @include('Page.terms')
-        <!-- End Modal -->
 
         <!-- Modal Update Ava -->
         @include('Page.update_ava')
-        <!-- End Modal -->
         
     </div>
 @endsection

@@ -1,18 +1,62 @@
-@extends('layouts.app')
-@section('content')
-    <!-- Header -->
-    @include('MasterPage.header2')
-    <!-- End Header -->
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-    <div>
-        <img width="100%" height="593" class="m-b-40" src="{{ asset('images/bg04.jpg') }}" alt="">
-    </div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{{ asset('images/XSplash.png') }}" type="image/x-icon">
+    <title>Splash</title>
 
-    <div class="col-md-10 m-auto">
-        <div class="text-center">
-            @foreach ($photo as $i)
-                <img width="415" height="415" src="{{ asset('post/'. $i->photo) }}" class=" m-r-20 m-t-20" alt="...">
-            @endforeach
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/util.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    <!-- JS -->
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Pre Loader -->
+    <div class="preloader">
+        <div class="loading">
+            <div class="d-flex justify-content-center">
+                <img src="{{ asset('images/spinner.gif') }}" width="50" alt="">
+            </div>
+            <br>
+            <br>
+            <p>Make Something Awesome</p>
         </div>
     </div>
-@endsection
+
+    <!-- Content -->
+    <div class="text-center">
+        Welcome
+    </div>
+   
+</body>
+<!-- Script -->
+<script>
+
+                    
+    // Script Pre Loader
+    $(document).ready(function () {
+        $(".preloader").fadeOut();
+    })
+
+</script>
+<!-- End Script -->
+
+</html>

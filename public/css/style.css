@@ -29,7 +29,7 @@
 .preloader .loading {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%,-50%);
     font: 14px arial;
 }
@@ -117,7 +117,9 @@
 
 /* Background */
 .loginimage {
-    background-image: url('../images/loginimage.jpg');
+    background-image: url('../images/loginimage2.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
+    background-attachment: fixed;
+    /* background-repeat: repeat; */
 }

@@ -7,9 +7,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ asset('images/XSplash.png') }}" type="image/x-icon">
-    <title>Splash</title>
-
+    <link rel="icon" href="{{ asset('images/icon1.png') }}" type="image/x-icon">
+    @if (Auth::user() == !"")
+        <title>{{ Auth::user()->bio }} ({{ Auth::user()->name }}) • Splash</title>
+    @else
+        <title>Splash</title>
+    @endif
+   
     @yield('css')
 
     <!-- CSS -->
@@ -46,13 +50,12 @@
             <p>Please Wait</p>
         </div>
     </div>
-    <!-- End Pre Loader -->
 
     <!-- Content -->
     <div>
         @yield('content')
     </div>
-    <!-- End Content -->
+   
 </body>
 <!-- Script -->
 <script>

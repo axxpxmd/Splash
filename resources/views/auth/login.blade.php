@@ -2,7 +2,7 @@
 @section('content')
     <!-- Header --> 
     <div class="white">
-        <div class="col-md-10 justify">
+        <div class="col-md-8 justify">
             @include('MasterPage.header2')
             <hr class="m-t-4">
         </div>
@@ -13,11 +13,10 @@
         <div class="container col-md-6 m-t-90">
             <div class="shadow-lg bdr-20 p-3 bg-white">
                 {{-- <a href="/">
-                    <img class="d-block mx-auto m-t-10" width="60" height="60" src="{{ asset('images/XSplash.png') }}"/>
+                    <img class="d-block mx-auto m-t-10" width="60" height="60" src="{{ asset('images/icon.png') }}"/>
                 </a> --}}
                 <p class="text-center fs-32 f-b sans m-t-20">Sign in to Splash</p>
                 <p class="josefin text-center fs-15 m-t-20" style="margin-top: -1%">Welcome Back</p>
-                {{-- <p class="sans text-center f-b fs-30">Login</p> --}}
                 <div>
                     <form method="POST" action="{{ route('login') }}">
                     @csrf

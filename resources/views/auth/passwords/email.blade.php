@@ -2,7 +2,7 @@
 @section('content')
     <!-- Header -->
     <div class="white">
-        <div class="col-md-10 justify">
+        <div class="col-md-8 justify">
             @include('MasterPage.header2')
             <hr class="m-t-4">
         </div>

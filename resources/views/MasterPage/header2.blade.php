@@ -1,8 +1,8 @@
 <div class="">
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand pacifico fs-20 m-r-60 m-t-4" href="/">
-            <img src="{{ asset('images/XSplash.png') }}" class="d-inline-block align-top" width="35" height="35" alt="">
-            Splash
+            <img src="{{ asset('images/icon.png') }}" class="d-inline-block align-top" width="35" height="35" alt="">
+            <span style="border-left: 1px black solid; height: 28px; margin-bottom: -7%" class="navbar-brand m-r-13 m-l-8"></span>Splash
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
