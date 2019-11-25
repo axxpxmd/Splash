@@ -89,7 +89,7 @@
                             <label class="f-b">Twitter</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input bg-white input-group-text">@</div>
+                                    <div class="input bg-transparent input-group-text">@</div>
                                 </div>
                                 <input type="text" class="input form-control" name="twitter" value="{{ Auth::user()->twitter }}" placeholder="example: asphmdx">
                             </div>
@@ -99,7 +99,7 @@
                             <label class="f-b">Instagram</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input bg-white input-group-text">@</div>
+                                    <div class="input bg-transparent input-group-text">@</div>
                                 </div>
                                 <input type="text" class="input form-control" name="instagram" value="{{ Auth::user()->instagram }}" placeholder="example: asphmdx">
                             </div>

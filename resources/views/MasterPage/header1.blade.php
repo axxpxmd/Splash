@@ -2,13 +2,13 @@
 
 <div class="fixed-top shadow">
     <div class="col-md-7 justify">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <a class="navbar-brand pacifico" style="margin-left: -2%" href="/home">
                 <img src="{{ asset('images/icon.png') }}" class="m-b-5" width="30" height="30" alt="">
                 <span style="border-left: 1px black solid; height: 28px; margin-bottom: -7%" class="navbar-brand m-r-13 m-l-8"></span>Splash
             </a>
             <!-- Button for Responsive -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive" aria-controls="responsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
 

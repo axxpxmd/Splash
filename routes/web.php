@@ -24,6 +24,10 @@ Route::get('/about', function () {
     return view('Page.about');
 });
 
+// Test Page
+Route::get('/test', function () {
+    return view('Page.test');
+});
 
 /* Auth */
 Auth::routes();

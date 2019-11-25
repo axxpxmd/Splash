@@ -37,7 +37,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body class="bg-white">
     <!-- Pre Loader -->
     <div class="preloader">
         <div class="loading">
