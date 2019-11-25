@@ -11,7 +11,7 @@ use App\Models\post;
 
 class PostController extends Controller
 {
-    // Store
+    // Proses Upload Post
     public function store(Request $request)
     {
         $validation = Validator::make($request->all(), [
@@ -44,6 +44,7 @@ class PostController extends Controller
        
     }
 
+    // Post Detail
     public function postDetail(Request $request)
     {
         $postDetail = post::whereid($request->post_id)->get();

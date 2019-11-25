@@ -16,7 +16,7 @@
             <img src="{{ asset('post/'. $i->photo) }}" class="" width="450" alt="...">
         @endforeach
         <div class="card">
-            Test
+            <img src="" alt="">
         </div>
     </div>
 

@@ -1,7 +1,11 @@
 @extends('layouts.app')
 @section('content')
     <!-- Header -->
-    @include('MasterPage.header2')
+    <div class="">
+        <div class="col-md-9 justify">
+            @include('MasterPage.header2')
+        </div>
+    </div>
     <!-- End Header -->
 
     <div class="col-md-8 justify">
@@ -70,7 +74,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 bg-transparent">
-                    <img width="636" height="636" src="{{ asset('images/made-with.jpg') }}" alt="">
+                    <img width="636" height="636" class="bg-transparent" src="{{ asset('images/made-with.jpg') }}" alt="">
                 </div>
             </div>
         </div>
@@ -103,12 +107,12 @@
         </div>
 
         <!-- Footer -->
-        <div class="m-t-90">
+        <div class="m-t-50">
             <hr>
             <div class="row">
                 <div class="col">
                     <a href="/">
-                        <img class="" width="30" height="30" src="{{ asset('images/XSplash.png') }}"/>
+                        <img class="" width="30" height="30" src="{{ asset('images/icon.png') }}"/>
                     </a>
                     <span class="f-blk m-l-10">Make Something Awesome</span>
                 </div>

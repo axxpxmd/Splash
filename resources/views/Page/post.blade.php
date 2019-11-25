@@ -8,13 +8,7 @@
                 </button>
             </div>
 
-
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Launch demo modal
-            </button>
                   
-                  <!-- Modal -->
-                
             <div class="alert alert-dismissible" id="message" data-target="#exampleModal" role="alert">
 
             </div>

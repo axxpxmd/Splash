@@ -41,9 +41,11 @@
         </div>
     </div>
 
+    @include('MasterPage.header2')
+
     <!-- Content -->
     <div class="text-center">
-        Welcome
+        
     </div>
    
 </body>

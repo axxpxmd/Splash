@@ -110,11 +110,6 @@
     transition:.5s ease all;
 }
 
-/* color */
-.white {
-    background-color: white;
-}
-
 /* Background */
 .loginimage {
     background-image: url('../images/loginimage2.jpg');

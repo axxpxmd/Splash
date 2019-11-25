@@ -1,10 +1,13 @@
-<div class="fixed-top shadow bg-light">
+{{-- Home, --}}
+
+<div class="fixed-top shadow">
     <div class="col-md-7 justify">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand pacifico" href="/home">
+            <a class="navbar-brand pacifico" style="margin-left: -2%" href="/home">
                 <img src="{{ asset('images/icon.png') }}" class="m-b-5" width="30" height="30" alt="">
-                <span style="border-left: 1px black solid; height: 28px; margin-bottom: -7%" class="navbar-brand m-r-13 m-l-8"></span>Splash 
+                <span style="border-left: 1px black solid; height: 28px; margin-bottom: -7%" class="navbar-brand m-r-13 m-l-8"></span>Splash
             </a>
+            <!-- Button for Responsive -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive" aria-controls="responsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,16 +29,16 @@
                         <h6 class="navbar-brand m-t-4 josefin"><span style="border-left: 1px black solid" class="m-r-20"></span>Hello... {{ Auth::user()->name }} </h6>
                         <div class="dropdown">
                             <a class="dropdown-toggle navbar-brand m-t-4" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                @if (Auth::user()->photo  == !'')
-                                    <img width="30px" height="30px" src="{{ asset('ava/' . Auth::user()->photo) }}" alt="..." class="rounded-circle"> 
+                                @if (Auth::user()->photo == !'')
+                                    <img width="30px" height="30px" src="{{ asset('ava/' . Auth::user()->photo) }}" alt="..." class="rounded-circle">
                                 @else
-                                    <img width="30px" height="30px" src="{{ asset('images/profil.png') }}" alt="..." class="rounded-circle"> 
-                                @endif 
+                                    <img width="30px" height="30px" src="{{ asset('images/profil.png') }}" alt="..." class="rounded-circle">
+                                @endif
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="{{ route('profil') }}">Profil</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                Log Out
+                                    Log Out
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
@@ -48,3 +51,6 @@
         </nav>
     </div>
 </div>
+
+<!-- Modal Post -->
+@include('Page.post')

@@ -1,3 +1,5 @@
+{{-- Account Setting, --}}
+
 <div class="shadow">
     <div class="col-md-8 container justify ">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -5,11 +7,13 @@
                 <img src="{{ asset('images/icon.png') }}" class="m-b-5" width="30" height="30" alt="">
                 <span style="border-left: 1px black solid; height: 28px; margin-bottom: -7%" class="navbar-brand m-r-13 m-l-8"></span>Splash
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+
+            <!-- Button for Responsive -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <div class="collapse navbar-collapse" id="responsive">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 </ul>
                 <div class="form-inline my-2 my-lg-0">

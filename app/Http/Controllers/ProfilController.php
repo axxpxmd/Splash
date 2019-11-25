@@ -97,4 +97,10 @@ class ProfilController extends Controller
             ->route('account.edit', Auth::user()->id)
             ->withSuccess('Photo Profil Was Deleted !');
     }
+
+    // Show Profil
+    public function show_profil()
+    {
+        return view('Page.show_profil.blade.php');
+    }
 }
