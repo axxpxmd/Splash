@@ -18,7 +18,7 @@
                 <div class="form-inline my-2 my-lg-0">
                     <ul class="navbar-nav">
                         <li class="nav-item m-t-4">
-                            <a class="nav-link navbar-brand m-r-15 josefin" href="#">Home</a>
+                            <a class="nav-link navbar-brand m-r-15 josefin" href="/home">Home</a>
                         </li>
                         <li class="nav-item m-t-4">
                             <a class="nav-link navbar-brand m-r-20 josefin" href="#">Explore</a>

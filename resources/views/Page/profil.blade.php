@@ -93,11 +93,21 @@
     <!-- Panel -->
     <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="post">
-            @foreach($post as $i)
-                <a href="{{ route('post.detail'). '?post_id='.$i->id }}">
-                    <img width="335" height="340" value={{ $i->id }} class="m-b-5 hov-pointer m-l-18 m-t-18 " src="{{ asset('post/'. $i->photo) }}" alt="">
+            @forelse ($post as $d)
+                <a href="{{ route('post.detail'). '?post_id='.$d->id }}">
+                    <img width="335" height="340" value={{ $d->id }} class="m-b-5 hov-pointer m-l-18 m-t-18 " src="{{ asset('post/'. $d->photo) }}" alt="">
                 </a>
-            @endforeach
+            @empty
+                <div class="row m-l-1">
+                    <img src="{{ asset('images/post.jpg') }}" width="400" class="img-fluid" alt="">
+                    <div class="card no-b" style="width: 43rem">
+                        <div class="m-auto">
+                            <p class="text-center fs-18">Start capturing and sharing your moments.</p>
+                            <button type="button" class="justify btn btn-outline-dark" data-toggle="modal" data-target="#publish"f>Submit a Photo</button>
+                        </div>
+                    </div>
+                </div>
+            @endforelse
         </div>
         <div class="tab-pane fade" id="like">
             Page Like

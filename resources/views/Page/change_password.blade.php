@@ -5,14 +5,8 @@
 @include('MasterPage.header4')
 
 <div class="container">
-    @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show text-center bdr-20" role="alert">
-            {{ session('success') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
+    @include('MasterPage.success')
+    <!-- Navigation -->
     <div class="row m-t-50">
         <div class="col-md-4">
             <p class="f-b fs-20">Account Setting</p>
@@ -82,7 +76,6 @@
             </div>
         </div>
     </div>
-    <!-- End Footer -->
 
     <!-- Modal -->
     @include('Page.terms')

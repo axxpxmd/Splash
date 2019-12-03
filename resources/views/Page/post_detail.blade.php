@@ -2,7 +2,7 @@
 @section('content')
 
     <!-- Header -->
-    @include('MasterPage.header')
+    @include('MasterPage.header1')
 
     <!-- Modal Post -->
     @include('Page.post')
@@ -16,7 +16,7 @@
             <img src="{{ asset('post/'. $i->photo) }}" class="" width="450" alt="...">
         @endforeach
         <div class="card">
-            <img src="" alt="">
+            
         </div>
     </div>
 

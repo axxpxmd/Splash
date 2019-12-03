@@ -29,7 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $post   = post::select('caption', 'photo', 'user_id')->get();
+        $post   = post::select('caption', 'photo', 'user_id', 'id')->get();
         $users  = users::whereNotIn('id', [Auth::id()])->get();
         // $users  = users::all();
         return view('home',  compact('post', 'users'));

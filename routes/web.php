@@ -56,4 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Suggest User
     Route::get('suggest-user', 'SuggestController@index')->name('suggest.user');
+
+    // Profil User
+    Route::get('profil-user', 'ProfilController@profil_user')->name('profil.user');
 });

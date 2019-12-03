@@ -98,9 +98,12 @@ class ProfilController extends Controller
             ->withSuccess('Photo Profil Was Deleted !');
     }
 
-    // Show Profil
-    public function show_profil()
+    // Show Profil User 
+    public function profil_user(Request $request)
     {
-        return view('Page.show_profil.blade.php');
+        $profil_user = users::where('id', $request->user_id)->get();
+        $post   = post::select('id', 'caption', 'photo', 'user_id')->where('user_id', $request->user_id)->get();
+        return view('Page.profil_user', compact('profil_user', 'post'));
     }
+
 }

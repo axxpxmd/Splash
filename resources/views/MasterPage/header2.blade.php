@@ -15,20 +15,24 @@
         <form class="form-inline my-2 my-lg-0">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item m-t-4">
-                    <a class="nav-link navbar-brand m-r-15 josefin" href="/">Home</a>
+                    <a class="nav-link navbar-brand m-r-15 josefin" href="/home">Home</a>
                 </li>
                 <li class="nav-item m-t-4">
                     <a class="nav-link navbar-brand m-r-15 josefin" href="/login">Explore</a>
                 </li>
                 <li class="nav-item m-t-4">
-                    <a class="nav-link navbar-brand m-r-20 josefin" href="/about">About</a>
+                    @if (Request::url() == 'about')
+                        <a class="nav-link navbar-brand m-r-20 josefin" href="/about">About</a>
+                    @endif
                 </li>
                 <a class="m-r-20 m-t-4" href="/login">
                     <button type="button" class="btn btn-outline-dark josefin bdr-20">Submit a Photo</button>
                 </a>
-                <a class="navbar-brand josefin m-t-4" href="/login">
-                    <span style="border-left: 1px black solid" class="m-r-20"></span>Login
-                </a>
+                @if (Auth::check() == !'')
+                    <a class="navbar-brand josefin m-t-4" href="/login">
+                        <span style="border-left: 1px black solid" class="m-r-20"></span>Login
+                    </a>
+                @endif
                 <a href="/register">
                     <button type="button" class="btn btn-success m-t-4 josefin bdr-20">Join free</button>
                 </a>

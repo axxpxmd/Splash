@@ -22,7 +22,7 @@
                             <span class="js-fileName">Browse a image</span>
                         </label>
                         <br>
-                        <img width="300" he class="rounded img-fluid" id="preview" style="display: block; margin: auto;" alt=""/>
+                        <img width="300" class="rounded img-fluid m-auto d-block" id="preview" alt=""/>
                     </div>
                 </div>
                 <div class="modal-footer">

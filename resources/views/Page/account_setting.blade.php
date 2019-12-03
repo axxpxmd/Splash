@@ -5,27 +5,13 @@
 @include('MasterPage.header4')
 
 <div class="container">
-    @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show text-center bdr-20 m-t-30" role="alert">
-            {{ session('success') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
-    @if (count($errors) > 0)
-        <div class="alert alert-danger m-t-30">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <strong>Whoops Error!</strong> &nbsp;Try another image<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    <!-- Alert Success -->
+    @include('MasterPage.success')
+
+    <!-- Alert Errors -->
+    @include('MasterPage.errors')
+
+    <!-- Navigation -->
     <div class="row m-t-50">
         <div class="col-md-4">
             <p class="f-b fs-20">Account Setting</p>
@@ -162,6 +148,7 @@
 
     <!-- Modal Update Ava -->
     @include('Page.update_ava')
+    
 </div>
 @endsection
 
